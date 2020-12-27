@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+        int u , a , t , d,q,w,e,f;
+        printf(" Please tell Initial speed :");
+        scanf ("%d",&u);
+        printf("Please tell the acceleration :");
+        scanf("%d",&a);
+        printf("Please tell the time to know the postion");
+        scanf("%d",&t);
+        q = u*t;
+        w = a*t;
+        e = w*t;
+        f = e/2;
+        d = q + f;
+        printf("The position of the particle is %d ", d);                                                                                                                                                                  return 0;
+}

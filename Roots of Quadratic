@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+float main()
+{
+        float a, b,c,d ,e ,f,g,h,j,k,l,m,n,o,x1,x2;
+        printf(" Please give the values of a , b and c of quadratic eqaution ax^2 + bx + c : \n ");
+        scanf("%f %f %f", &a,&b,&c);
+        f = b*b;
+        g = 4*a*c;
+        d = f - g;
+        if ( d > 0 ){
+                h = sqrtf(d);
+                j = -b + h;
+                k = -b - h;
+                l = j/a;
+                m = k/a;
+                x1 = l/2;
+                x2 = m/2;
+                printf(" The roots of the equation are %f and %f \n ", x1 , x2);
+        }
+        else if ( d == 0 ){
+                n = -b/2;
+                o = n/a;
+                printf("The roots are equal and equal to %f \n", o);
+        }
+        else {
+                printf("Roots of the equation are imaginary.\n");
+        }
+        return 0;

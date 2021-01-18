@@ -1,0 +1,26 @@
+#include<math.h>
+
+int main(){
+        int w,h,n,t;
+        scanf("%d",&t);
+        if(1<t<10000){
+        while(t--){
+                scanf("%d %d %d",&w,&h,&n);
+                int cards = 0,i = 0 ,j = 0;
+                while(w%2 == 0){
+                        w = w/2;
+                        i++;
+                }
+                while(h%2 == 0){
+                        h=h/2;
+                        j++;
+                }
+                cards = pow(2,(i+j));
+                if(cards>=n)
+                        printf("Yes\n");
+                else
+                        printf("No\n");
+        }
+        }
+        return 0;
+}

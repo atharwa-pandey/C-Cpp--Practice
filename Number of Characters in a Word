@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main(){
+        char input[50], alp[26] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+        int size,i=0;
+        input[0] = getchar();
+        while(input[i] != '\n'){
+                i++;
+                input[i] = getchar();
+        }
+        input[i] = '\0';
+        size = i;
+        for(int j=0;j<26;j++){
+                int count=0;
+                for(int k=0;k<size;k++){
+                        if(alp[j]==input[k]){
+                                count++;
+                        }
+                }if(count!=0){
+                printf("%c : %d \n",alp[j],count);
+        }
+        }
+        return 0;
+}

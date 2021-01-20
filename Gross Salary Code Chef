@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main()
+{
+        float base , hra , da, gross;
+        int t;
+        scanf("%d",&t);
+        if(0<t<1001){
+        while(t--){
+                scanf("%f",&base);
+                if(0<base<100001){
+                        if(base<1500){
+                                gross = 2*base;
+                                printf("%0.2f\n",gross);
+                        }
+                        if(base>=1500){
+                                gross = 500 + 1.98*base;
+                                printf("%0.2f\n",gross);
+                        }
+                }
+        }
+        }
+        return 0;
+}

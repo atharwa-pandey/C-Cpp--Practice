@@ -1,0 +1,19 @@
+#include<stdio.h>
+int fun(int,int);
+int main(){
+        int a,b,ans;
+        scanf("%d %d",&a,&b);
+        ans = fun(a,b);
+        printf("%d\n",ans);
+        return 0;
+}
+
+int fun(int a , int b){
+        int r;
+        if(b==0)
+                return 1;
+        else{
+                r = a * fun(a,--b);
+        }
+        return r;
+}

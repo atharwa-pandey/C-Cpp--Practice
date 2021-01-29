@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main(){
+        int t;
+        scanf("%d",&t);
+        if(0<t<30001){
+                while(t--){
+                        int seg[4];
+                        for(int i=0;i<4;i++)
+                                scanf("%d",&seg[i]);
+                        for(int i=0;i<4;i++){
+                                for(int j=1+i;j<4;j++){
+                                        if(seg[i]>seg[j]){
+                                                int temp;
+                                                temp=seg[i];
+                                                seg[i]=seg[j];
+                                                seg[j]=temp;
+                                        }
+                                        else;
+                                }
+                        }
+                        int area = seg[0]*seg[2];
+                        printf("%d\n",area);
+                }
+        }
+        return 0;
+}

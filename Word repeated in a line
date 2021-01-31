@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int main()
+{
+        int il=0,iw=0;
+        char inl[100],inw[10];
+        printf("Please give the Line\n");
+        scanf("%c",&inl[0]);
+        while(inl[il]!='\n'){
+                il++;
+                scanf("%c",&inl[il]);
+        }
+        inl[il]='\0';
+        int nl = il;
+        printf("Please give the word\n");
+        scanf("%c",&inw[0]);
+        while(inw[iw]!='\n'){
+                iw++;
+                scanf("%c",&inw[iw]);
+        }
+        inw[iw]='\0';
+        int nw = iw;
+        int c1=0;
+        for(int i=0;i<nw;i++){
+                for(int j=0;j<nl;j++){
+                        if(inw[i]==inl[j]){
+                                int count =0;
+                                for(int k=0;k<nw;k++){
+                                        if(inw[i+k]==inl[j+k])
+                                                count++;
+                                }
+                                if(count ==nw)
+                                        c1++;
+                        }
+                }
+        }
+        if(inl[il-iw]==inw[0]){
+        printf("No. of word repeated is %d\n",c1-1);
+        }
+        else
+                printf("No. of word repeated is %d\n",c1);
+
+        return 0;
+}

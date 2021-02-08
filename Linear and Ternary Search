@@ -1,0 +1,82 @@
+#include<stdio.h>
+int N;
+int linear_search(int arr[], int x);
+int ternary_search(int arr[] , int x);
+int count_linear_search = 0, count_ternary_search=0;
+int main(){
+        printf("Size of array:");
+        scanf("%d",&N);
+        int arr[N],x;
+        printf("Numbers:");
+        for( int i=0;i<N;i++)
+                scanf("%d",&arr[i]);
+        printf("\nValue of x:");
+        scanf("%d",&x);
+        int c = linear_search(arr,x);
+        printf("Linear Search\n");
+        if(c==0)
+                printf("%d is not present\n",x);
+        printf("Function called %d times\n",count_linear_search);
+        printf("\n \nTernary Search:\n");
+        int d = ternary_search(arr,x);
+        if(d==0)
+                printf("%d is not present.\n",x);
+        printf("Function called %d times\n",count_ternary_search);
+        return 0;
+}
+
+
+int linear_search(int arr[],int x){
+        static int i=0,j=0;
+        if(i==N)
+                return 0;
+        if(arr[i]==x){
+                printf("%d is present at %d \n",x,(i+1));
+                j++;
+        }
+        i++;
+        count_linear_search++;
+        linear_search(arr,x);
+        return j;
+}
+
+int ternary_search(int arr[] , int x){
+        static int a=0;
+        int k =N/3-1;
+        if(x == arr[k]){
+                printf("%d is present at %d\n",x,k+1);
+                a++;
+                return 0;
+        }
+        if(x<arr[k]){
+                int temp[k];
+                for(int i=0;i<k;i++)
+                        temp[i]=arr[i];
+                ternary_search(temp,x);
+        }
+        else if(x==arr[2*k +1]){
+                printf("%d is present at %d\n",x,(2*k + 1));
+                a++;
+                return 0;
+        }
+        else if(x<arr[2*k+1]){
+                int temp1[k];
+                for(int i=k;i<(2*k+1);i++)
+                        temp1[i]=arr[i];
+                ternary_search(temp1,x);
+        }
+        else if(x==arr[3*k + 2]){
+                printf("%d is present at %d\n",x,3*k + 2);
+                a++;
+                return 0;
+        }
+        else if(x<arr[3*k+2]){
+                int temp2[k];
+                for(int i=(2*k+1);i<3*k+2;i++)
+                        temp2[i]=arr[i];
+                ternary_search(temp2,x);
+        }
+        k = k/3;
+        count_ternary_search++;
+        return a;
+}

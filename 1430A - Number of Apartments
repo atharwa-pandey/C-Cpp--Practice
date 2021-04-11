@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main()
+{
+        int t;
+        scanf("%d",&t);
+                while(t--){
+                        int n,k=0,ans=0,a,b,c;
+                        scanf("%d",&n);
+                        for(a=0;a<334;a++){
+                                for(b=0;b<201;b++){
+                                        for(c=0;c<160;c++){
+                                                k= a*3 + b*5 + c*7;
+                                                if(k == n){
+                                                        printf("%d %d %d\n",a,b,c);
+                                                        ans=1;
+                                                        break;
+                                                }
+                                        }
+                                        if ( ans ==1)
+                                                break;
+                                }
+                                if (ans ==1)
+                                        break;
+                        }
+                        if(ans ==0)
+                                printf("-1\n");
+                }
+
+        return 0;
+}

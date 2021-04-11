@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(){
+        int t;
+        scanf("%d",&t);
+        while(t--){
+                int k=0,ans=0,n,a,b;
+                scanf("%d",&n);
+                for( a=0;a<500;a++){
+                        for( b=0;b<500;b++ ){
+                                k = a*2020 + b*2021;
+                                if(k == n){
+                                        ans = 1;
+                                }
+                        }
+                }
+                if(ans == 1)
+                        printf("YES\n");
+                else
+                        printf("NO\n");
+        }
+        return 0;
+}
